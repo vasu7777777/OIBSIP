@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tribute to Albert Einstein</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #674f4f;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:30%
+    }
+    
+    .photo img {
+      max-width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    .quote-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .quote-box {
+      flex-basis: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      background-color: #aeceef;
+    }
+    
+    .quote-box:nth-child(even) {
+      background-color: #d6f363;
+    }
+    
+    .quote-box:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .quote-box:hover h3,
+    .quote-box:hover p {
+      color: #333333;
+    }
+    
+    .quote-box h3,
+    .quote-box p {
+      transition: color 0.3s ease;
+    }
+    
+    .reason-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .reason-box {
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      animation: moveBoxes 4s infinite alternate;
+    }
+    
+    .reason-box:nth-child(1) {
+      background-color: #ffe0cc;
+    }
+    
+    .reason-box:nth-child(2) {
+      background-color: #e0ccff;
+    }
+    
+    .reason-box:nth-child(3) {
+      background-color: #ccffcc;
+    }
+    
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #674f4f;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      height: 300px;
+      border-radius: 50%;
+    }
+    
+    .video-container video {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+    
+    @keyframes moveBoxes {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      
+      .reason-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <center class="container">
+    <div class="header">
+      <h1>Tribute to Albert Einstein</h1>
+    </div>
+    <div class="photo">
+      <center><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn3.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcSJKyrj1M_E4zNvs1V3mfNkv13MajxmmotwGgNlb639NJVMdPgVDHv29wgH_SnTO_Ep_SPNM6vm_yslNWc&psig=AOvVaw0y5UBbB__SBJ8qQ4cufAyA&ust=1686812371192000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMC6wPKXwv8CFQAAAAAdAAAAABAE" alt="Albert Einstein"></center>
+    </div>
+  </center>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <h1>About Albert Einstein</h1>
+    </div>
+    
+    <div class="quote-container">
+      <div class="quote-box">
+        <h3>Birth</h3>
+        <p>Albert Einstein was born on March 14, 1879, in Ulm, in the Kingdom of Württemberg in the German Empire.</p>
+      </div>
+      
+      <div class="quote-box">
+        <h3>Contributions</h3>
+        <p>Einstein made significant contributions to theoretical physics, including the theory of relativity, the photoelectric effect, and the mass-energy equivalence formula E = mc².</p>
+      </div>
+    </div>
+    
+    <div class="quote-container">
+      <div class="quote-box">
+        <h3>Awards</h3>
+        <p>Einstein received the Nobel Prize in Physics in 1921 for his explanation of the photoelectric effect.</p>
+      </div>
+      
+      <div class="quote-box">
+        <h3>Legacy</h3>
+        <p>Einstein's theories revolutionized our understanding of the physical world and laid the foundation for many modern technologies.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <h1>Why I Admired Albert Einstein</h1>
+    </div>
+    
+    <div class="reason-container">
+      <div class="reason-box">
+        <h3>Curiosity</h3>
+        <p>I admire Einstein's insatiable curiosity and his relentless pursuit of knowledge.</p>
+      </div>
+      
+      <div class="reason-box">
+        <h3>Imagination</h3>
+        <p>Einstein's ability to think outside the box and imagine new possibilities is truly inspiring.</p>
+      </div>
+      
+      <div class="reason-box">
+        <h3>Impact</h3>
+        <p>Einstein's groundbreaking theories have had a profound impact on our understanding of the universe.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="header">
+      <h1>Video Tribute</h1>
+    </div>
+    
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cT-S4gHmfnM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
