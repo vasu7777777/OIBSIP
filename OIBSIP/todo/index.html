@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do Web App</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #dff5f4;
+      border-radius: 5px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #taskInput {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #e67f7f;
+      border-radius: 5px;
+    }
+    #addButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #taskList,
+    #completedTaskList {
+      list-style-type: none;
+      padding: 0;
+    }
+    .task-item,
+    .completed-task-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .completed-task-item {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .task-item span,
+    .completed-task-item span {
+      flex: 1;
+    }
+    .delete-button,
+    .completed-delete-button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #taskContainer {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <input id="taskInput" type="text" placeholder="Enter a task">
+    <button id="addButton">Add</button>
+
+    <div id="taskContainer">
+      <h2>Tasks</h2>
+      <ul id="taskList">
+        <!-- The task items will be dynamically added here -->
+      </ul>
+    </div>
+
+    <div>
+      <h2>Completed Tasks</h2>
+      <ul id="completedTaskList">
+        <!-- The completed task items will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for the frontend
+    const taskInput = document.getElementById("taskInput");
+    const addButton = document.getElementById("addButton");
+    const taskList = document.getElementById("taskList");
+    const completedTaskList = document.getElementById("completedTaskList");
+
+    let tasks = [];
+    let completedTasks = [];
+
+    // Function to render the tasks
+    function renderTasks() {
+      taskList.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const taskItem = document.createElement("li");
+        taskItem.className = "task-item";
+        taskItem.innerHTML = `
+          <span>${task.text}</span>
+          <button class="delete-button" onclick="completeTask(${index})">Complete</button>
+        `;
+        taskList.appendChild(taskItem);
+      });
+    }
+
+    // Function to render the completed tasks
+    function renderCompletedTasks() {
+      completedTaskList.innerHTML = "";
+      completedTasks.forEach((task, index) => {
+        const completedTaskItem = document.createElement("li");
+        completedTaskItem.className = "completed-task-item";
+        completedTaskItem.innerHTML = `
+          <span>${task.text}</span>
+          <button class="completed-delete-button" onclick="deleteCompletedTask(${index})">Delete</button>
+        `;
+        completedTaskList.appendChild(completedTaskItem);
+      });
+    }
+
+    // Function to add a task
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText !== "") {
+        tasks.push({ text: taskText });
+        renderTasks();
+        taskInput.value = "";
+      }
+    }
+
+    // Function to complete a task
+    function completeTask(index) {
+      const completedTask = tasks.splice(index, 1)[0];
+      completedTasks.push(completedTask);
+      renderTasks();
+      renderCompletedTasks();
+    }
+
+    // Function to delete a completed task
+    function deleteCompletedTask(index) {
+      completedTasks.splice(index, 1);
+      renderCompletedTasks();
+    }
+
+    addButton.addEventListener("click", addTask);
+  </script>
+</body>
+</html>
