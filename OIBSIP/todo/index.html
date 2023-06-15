@@ -3,7 +3,6 @@
 <head>
   <title>To-Do Web App</title>
   <style>
-    /* Add your CSS styles here */
     body {
       font-family: Arial, sans-serif;
     }
@@ -79,20 +78,20 @@
     <div id="taskContainer">
       <h2>Tasks</h2>
       <ul id="taskList">
-        <!-- The task items will be dynamically added here -->
+        
       </ul>
     </div>
 
     <div>
       <h2>Completed Tasks</h2>
       <ul id="completedTaskList">
-        <!-- The completed task items will be dynamically added here -->
+    
       </ul>
     </div>
   </div>
 
   <script>
-    // JavaScript code for the frontend
+    
     const taskInput = document.getElementById("taskInput");
     const addButton = document.getElementById("addButton");
     const taskList = document.getElementById("taskList");
@@ -101,7 +100,7 @@
     let tasks = [];
     let completedTasks = [];
 
-    // Function to render the tasks
+ 
     function renderTasks() {
       taskList.innerHTML = "";
       tasks.forEach((task, index) => {
@@ -115,7 +114,7 @@
       });
     }
 
-    // Function to render the completed tasks
+
     function renderCompletedTasks() {
       completedTaskList.innerHTML = "";
       completedTasks.forEach((task, index) => {
@@ -129,7 +128,7 @@
       });
     }
 
-    // Function to add a task
+   
     function addTask() {
       const taskText = taskInput.value.trim();
       if (taskText !== "") {
@@ -139,7 +138,7 @@
       }
     }
 
-    // Function to complete a task
+ 
     function completeTask(index) {
       const completedTask = tasks.splice(index, 1)[0];
       completedTasks.push(completedTask);
@@ -147,7 +146,7 @@
       renderCompletedTasks();
     }
 
-    // Function to delete a completed task
+
     function deleteCompletedTask(index) {
       completedTasks.splice(index, 1);
       renderCompletedTasks();
